@@ -18,7 +18,9 @@ let mongoose = require('mongoose');
 // );
 console.log('Hello');
 console.log(process.env.MONGODB_URI);
-let uri = process.env.MONGODB_URI;
-mongoose.connect(uri, {useMongoClient: true });
+//let uri = process.env.MONGODB_URI;
+//mongoose.connect(uri, {useMongoClient: true });
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 
 // connect with student.model
+require('./student.model');
