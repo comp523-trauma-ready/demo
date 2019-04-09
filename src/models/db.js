@@ -1,4 +1,4 @@
-// // connect to mongoose
+// connect to mongoose
 let mongoose = require('mongoose');
 //
 // const server = 'ds253094.mlab.com:53094';
@@ -16,8 +16,9 @@ let mongoose = require('mongoose');
 //         }
 //     }
 // );
-
-mongoose.connect(process.env.MONGODB_URL);
+console.log('Hello');
+console.log(process.env.MONGODB_URI);
+let uri = process.env.MONGODB_URI;
+mongoose.connect(uri, {useMongoClient: true });
 
 // connect with student.model
-require('./student.model');
